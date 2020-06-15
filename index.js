@@ -1,16 +1,22 @@
 //DEFINE VARIABLES
+
+
 let inputField = document.getElementById('item');
 let listItems = document.getElementById('items');
 let submitBtn = document.querySelector('input[type=submit]');
 let searchBar = document.getElementById('filter');
-let saveBtn = document.getElementById('saveBtn');
+
+
+
+
+
+
 
 //ADD EVENTS
 window.addEventListener('load', displayItems);
 submitBtn.addEventListener('click', addItem);
-listItems.addEventListener('click', deleteItem);
+listItems.addEventListener('click', noteButtonsTrigger);
 searchBar.addEventListener('keyup', filterItems);
-
 
 
 //DEFINE FUNCTIONS
@@ -25,8 +31,8 @@ function displayItems(){
             deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
             deleteBtn.innerHTML = 'X';
             let expandBtn = document.createElement('button');
-            expandBtn.classList = 'expand'
-            expandBtn.innerHTML = 'View'
+            expandBtn.classList = 'expand';
+            expandBtn.innerHTML = 'Expand +';
             let liText = document.createTextNode(localStorage[item]);
             
             li.appendChild(liText);
@@ -50,8 +56,8 @@ function addItem(event){
     deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
     deleteBtn.innerHTML = 'X';
     let expandBtn = document.createElement('button');
-    expandBtn.classList = 'expand'
-    expandBtn.innerHTML = 'View'
+    expandBtn.classList = 'expand';
+    expandBtn.innerHTML = 'Expand +';
     let liText = document.createTextNode(inputField.value);
     
     li.appendChild(liText);
@@ -65,16 +71,21 @@ function addItem(event){
 }
 
 
-//delete item
-function deleteItem(event){
-    //delete only if 'X' btn clicked 
+//note buttons trigger function - trigger either delete or expand button
+function noteButtonsTrigger(event){
+    //delete note if delete button clicked
     if (event.target.className.indexOf('delete') !== -1) {
-        if (confirm("Are you sure")){
+        if (confirm("Do you want to delete this note?")){
         let li = event.target.parentElement;
         li.remove();
         saveLocalStorage();
         }
-    }
+    } 
+    // go to note page if expand clicked
+    else if (event.target.className.indexOf('expand') !== -1) {
+        console.log('works');
+        window.location='note.html';
+    } 
 }
 
 
@@ -95,15 +106,27 @@ function filterItems(event){
 
 
 //save items to local storage
+// function saveLocalStorage(){
+//     //clear local storage
+//     window.localStorage.clear();
+//     //save all items from list
+//     let i = 0;
+//     Array.from(listItems.children).forEach(item => {
+//     window.localStorage.setItem(i++,item.firstChild.textContent);
+//     });
+// }
+
 function saveLocalStorage(){
     //clear local storage
     window.localStorage.clear();
     //save all items from list
     let i = 0;
     Array.from(listItems.children).forEach(item => {
-    window.localStorage.setItem(i++, item.firstChild.textContent);
+    window.localStorage.setItem(i++,item.firstChild.textContent);
     });
 }
+
+
 
 
 
