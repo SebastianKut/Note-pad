@@ -24,10 +24,14 @@ function displayItems(){
             let deleteBtn = document.createElement('button');
             deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
             deleteBtn.innerHTML = 'X';
+            let expandBtn = document.createElement('button');
+            expandBtn.classList = 'expand'
+            expandBtn.innerHTML = 'View'
             let liText = document.createTextNode(localStorage[item]);
             
             li.appendChild(liText);
-            li.appendChild(deleteBtn);
+            li.appendChild(expandBtn);
+            li.appendChild(deleteBtn);        
             listItems.appendChild(li);
         })
 }   
@@ -45,9 +49,13 @@ function addItem(event){
     let deleteBtn = document.createElement('button');
     deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
     deleteBtn.innerHTML = 'X';
+    let expandBtn = document.createElement('button');
+    expandBtn.classList = 'expand'
+    expandBtn.innerHTML = 'View'
     let liText = document.createTextNode(inputField.value);
     
     li.appendChild(liText);
+    li.appendChild(expandBtn);
     li.appendChild(deleteBtn);
     listItems.appendChild(li);
 

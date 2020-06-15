@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- this makes sure that width media querry works on mobile phones-->
  <link rel="stylesheet" href="styles.css">
   <title>Notepad App</title>
@@ -13,20 +10,17 @@
             <div class="col-md-6">
                 <h1 id="header-title">Notepad</h1>
             </div>
-            <div class="col-md-6 align-self-center">
-                <input type="text" class="form-control" id="filter" placeholder="Search notes...">
-            </div>
+            <button type="button">&lt Back</button>
           </div>
         </div>
       </header>
       <div class="container">
-       <div id="main" class="card card-body">
-        <h2 class="title">Add new note</h2>
-        <form id="addForm" class="form-inline mb-3">
-          <input type="text" class="form-control mr-2" id="item" placeholder="Type note title..." autofocus="autofocus">
-          <input type="submit" class="btn btn-dark" value="Add +">
+       <div id="main-field" class="card card-body">
+        <h2 class="title" id="note-title">some title</h2>
+        <form id="note-form" class="form-inline mb-3">
+          <textarea autofocus="autofocus" id="note-field" placeholder="Type your note here..."></textarea>
+          <button type="button">Save</button>
         </form>
-        <ul id="items" class="list-group"></ul>
        </div>
        
       </div>
