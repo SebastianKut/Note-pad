@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -28,7 +29,7 @@ header h1 {
     color: rgb(187,123,62) ;
 }
 
- .row {
+.row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,8 +38,19 @@ header h1 {
 }
 
 .col-md-6 {
-    width: 50%;
+    position: relative;
+    width: 100%;
     display: flex;
+    align-items: center;
+
+}
+
+.icon {
+position: absolute;
+top: 25px;
+left: 10px;
+height: 32px;
+color: gray;
 }
 
 #header-title {
@@ -54,7 +66,7 @@ header h1 {
     margin: 1rem 0 1rem 0;
     font-size: 16px;
     line-height: 20px;
-    padding: 0 1rem;
+    padding: 0 30px;
     border-radius: 25px;
     border: solid 1px rgb(187, 187, 187);
 
@@ -104,7 +116,7 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     border: solid 1px gray;
-    color: black;
+    color: rgb(80, 80, 80);
 }
 
 form input[type="text"] {
@@ -127,7 +139,7 @@ form input[type="text"]:hover {
 }
 
 .item-wrapper {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -137,7 +149,7 @@ form input[type="text"]:hover {
 }
 
 .list-group-item {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     width: 100%;
     position: relative;
     border: solid 1px rgb(187, 187, 187);
@@ -165,32 +177,31 @@ form input[type="text"]:hover {
 }
 
 .list-group-item button:hover {
-    border: solid 1px black;
-    color: black;
+    color: rgb(80, 80, 80);
 }
 
 .delete {
     width: 35px;
     right: 1rem;
-    font-size: 15px;
+    font-size: 25px;
 }
 
 .expand {
     width: 35px;
     right: 4rem;
-    font-size: 15px;
+    font-size: 25px;
 }
 
 .collapse {
     width: 35px;
     right: 4rem;
-    font-size: 15px;
+    font-size: 25px;
     display: none;
 }
 
 
 .note-field {
-    box-sizing: border-box; /*otherwise piece of shit expands over its container*/
+   /* box-sizing: border-box; /*otherwise piece of shit expands over its container*/
     width: 100%;
     height: 650px;
     overflow-y: auto;
@@ -215,6 +226,12 @@ form input[type="text"]:hover {
     .col-md-6 {
         width: 100%;
     }
+
+    .icon {
+        top: 9px;
+        left: 10px;
+    }
+
     #filter {
         margin: 0 0 1rem 0;
     }

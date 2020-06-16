@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- this makes sure that width media querry works on mobile phones-->
  <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="fonts/all.css">
+ 
   <title>Notepad App</title>
 </head>
 <body>
@@ -14,7 +16,8 @@
                 <h1 id="header-title">note<span class="fill">Pad</span></h1>
             </div>
             <div class="col-md-6 align-self-center">
-                <input type="text" class="form-control" id="filter" placeholder="Search notes...">
+              <i class="fas fa-search icon"></i>
+              <input type="text" class="form-control" id="filter" placeholder="Search notes..."> 
             </div>
           </div>
         </div>
@@ -27,14 +30,14 @@
           <input type="submit" class="btn btn-dark" value="Add">
         </form>
         <div id="items" class="list-group">
-         <!-- <div class="item-wrapper">
+         <!--<div class="item-wrapper">
             <div class="list-group-item">Grocery list
-              <button class="expand">Expand +</button>
-              <button class="collapse">Collapse -</button>
-              <button class="btn btn-danger btn-sm float-right delete">X</button>
+              <button class="expand"><i class="fas fa-plus-circle expandIcon"></i></button>
+              <button class="collapse"><i class="fas fa-minus-circle collapseIcon"></i></button>
+              <button class="btn btn-danger btn-sm float-right delete"><i class="fas fa-trash-alt deleteIcon"></i></button>
             </div>
             <textarea class="note-field" placeholder="Type your note here..."></textarea>
-        </div> -->
+        </div>--> 
       </div>
        </div>
        

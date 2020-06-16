@@ -59,20 +59,26 @@ function displayItems(){
     divGroupItem.className = "list-group-item"; 
     let deleteBtn = document.createElement('button');
     deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
-    deleteBtn.innerHTML = 'x';
+    let deleteIcon = document.createElement('i');
+    deleteIcon.classList = "fas fa-trash-alt deleteIcon";
     let expandBtn = document.createElement('button');
-    expandBtn.classList = 'expand';
-    expandBtn.innerHTML = '+';
+    expandBtn.className = 'expand';
+    let expandIcon = document.createElement('i');
+    expandIcon.classList = "fas fa-plus-circle expandIcon";
     let collapseBtn = document.createElement('button');
-    collapseBtn.classList = 'collapse';
-    collapseBtn.innerHTML = '-';
+    collapseBtn.className = 'collapse';
+    let collapseIcon = document.createElement('i');
+    collapseIcon.classList = "fas fa-minus-circle collapseIcon";
     let itemText = document.createTextNode(localStorage[titlesArray[i]]);
 
     
     divGroupItem.appendChild(itemText);
     divGroupItem.appendChild(expandBtn);
+    expandBtn.appendChild(expandIcon);
     divGroupItem.appendChild(collapseBtn);
+    collapseBtn.appendChild(collapseIcon);
     divGroupItem.appendChild(deleteBtn);
+    deleteBtn.appendChild(deleteIcon);
 
     divItemWrapper.appendChild(divGroupItem);
     divItemWrapper.appendChild(yellowNote);
@@ -105,13 +111,13 @@ function addItem(event){
     divGroupItem.className = "list-group-item"; 
     let deleteBtn = document.createElement('button');
     deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
-    deleteBtn.innerHTML = 'x';
+    deleteBtn.innerHTML = '<i class="fas fa-trash-alt deleteIcon"></i>';
     let expandBtn = document.createElement('button');
-    expandBtn.classList = 'expand';
-    expandBtn.innerHTML = '+';
+    expandBtn.className = 'expand';
+    expandBtn.innerHTML = '<i class="fas fa-plus-circle expandIcon"></i>';
     let collapseBtn = document.createElement('button');
-    collapseBtn.classList = 'collapse';
-    collapseBtn.innerHTML = '-';
+    collapseBtn.className = 'collapse';
+    collapseBtn.innerHTML = '<i class="fas fa-minus-circle collapseIcon"></i>';
     let itemText = document.createTextNode(inputField.value);
 
     
@@ -134,27 +140,27 @@ function addItem(event){
 //note buttons trigger function - trigger either delete or expand button
 function noteButtonsTrigger(event){
     //delete note if delete button clicked
-    if (event.target.className.indexOf('delete') !== -1) {
+    if (event.target.className.indexOf('deleteIcon') !== -1) {
         if (confirm("Do you want to delete this note?")){
-        let wrapper = event.target.parentElement.parentElement;
+        let wrapper = event.target.parentElement.parentElement.parentElement;
         wrapper.remove();
         saveLocalStorage();
         }
     } 
     // go to note page if expand clicked
-    else if (event.target.className.indexOf('expand') !== -1) {
+    else if (event.target.className.indexOf('expandIcon') !== -1) {
         console.log('works');
-        event.target.nextElementSibling.style.display = 'block';
-        event.target.style.display = 'none';
         event.target.parentElement.nextElementSibling.style.display = 'block';
+        event.target.parentElement.style.display = 'none';
+        event.target.parentElement.parentElement.nextElementSibling.style.display = 'block';
         
     } 
 
-    else if (event.target.className.indexOf('collapse') !== -1) {
+    else if (event.target.className.indexOf('collapseIcon') !== -1) {
          console.log('works');
-        event.target.previousElementSibling.style.display = 'block';
-        event.target.style.display = 'none';
-        event.target.parentElement.nextElementSibling.style.display = 'none';
+        event.target.parentElement.previousElementSibling.style.display = 'block';
+        event.target.parentElement.style.display = 'none';
+        event.target.parentElement.parentElement.nextElementSibling.style.display = 'none';
         saveLocalStorage();
 }
 }
@@ -190,3 +196,4 @@ function saveLocalStorage(){
 
 
 
+// change javascript for buttons so it includes icon area clicked on
