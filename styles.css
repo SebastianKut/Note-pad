@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*otherwise piece of shit expands over its container*/
+    box-sizing: border-box; /*otherwise expands over its container*/
 }
 
 html, body {
@@ -223,7 +223,7 @@ form input[type="text"]:hover {
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .col-md-6 {
         width: 100%;
     }
