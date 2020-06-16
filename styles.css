@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /*otherwise piece of shit expands over its container*/
 }
 
 html, body {
@@ -105,6 +105,8 @@ form {
 form input[type="submit"] {
     margin: 0 .5rem;
     width: 77px;
+    min-width: 50px;
+
     font-size: 16px;
     line-height: 20px;
     background-color: rgb(226, 226, 226);
@@ -122,6 +124,7 @@ form input[type="submit"]:hover {
 form input[type="text"] {
     height: 32px;
     width: 245px;
+    min-width: 180px;
     margin: 0;
     border-radius: 25px;
     font-size: 16px;
@@ -139,7 +142,6 @@ form input[type="text"]:hover {
 }
 
 .item-wrapper {
-    /*box-sizing: border-box;*/
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -149,7 +151,6 @@ form input[type="text"]:hover {
 }
 
 .list-group-item {
-    /*box-sizing: border-box;*/
     width: 100%;
     position: relative;
     border: solid 1px rgb(187, 187, 187);
@@ -189,19 +190,18 @@ form input[type="text"]:hover {
 .expand {
     width: 35px;
     right: 4rem;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .collapse {
     width: 35px;
     right: 4rem;
-    font-size: 25px;
+    font-size: 30px;
     display: none;
 }
 
 
 .note-field {
-   /* box-sizing: border-box; /*otherwise piece of shit expands over its container*/
     width: 100%;
     height: 650px;
     overflow-y: auto;
