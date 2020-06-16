@@ -14,7 +14,7 @@ html, body {
 }
 
 #main-header {
-    background-color: rgb(10, 172, 247);
+    background-color: rgb(62,126,187);
     margin-top: 0;
 }
 
@@ -24,19 +24,8 @@ header h1 {
     font-weight: 500;
     color: rgb(255, 255, 255);
 }
-
-header button {
-    position: absolute;
-    right: 0;
-    width: 77px;
-    height: 32px;
-    font-size: 16px;
-    line-height: 20px;
-    background-color: navy;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.fill {
+    color: rgb(187,123,62) ;
 }
 
  .row {
@@ -66,15 +55,20 @@ header button {
     font-size: 16px;
     line-height: 20px;
     padding: 0 1rem;
-    border-radius: 5px;
+    border-radius: 25px;
     border: solid 1px rgb(187, 187, 187);
 
+}
+
+#filter:hover {
+    border: solid 1px gray;
 }
 
 
 #main {
     margin: 1rem 0;
     border: solid 1px rgb(187, 187, 187);
+    box-shadow: 0 10px 6px -6px #777;
     border-radius: 5px;
     padding: 1rem;
     display: flex;
@@ -101,21 +95,31 @@ form input[type="submit"] {
     width: 77px;
     font-size: 16px;
     line-height: 20px;
-    background-color: navy;
-    color: white;
+    background-color: rgb(226, 226, 226);
+    color: gray;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    border: solid 1px gray;
+    color: black;
 }
 
 form input[type="text"] {
     height: 32px;
     width: 245px;
     margin: 0;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 16px;
     border: solid 1px rgb(187, 187, 187);
     padding: 0 1rem;
+}
+
+form input[type="text"]:hover {
+    box-shadow: 0 0 10px rgb(180, 180, 180);
+    border: solid 1px transparent;
 }
 
 #items {
@@ -129,6 +133,7 @@ form input[type="text"] {
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
+    box-shadow: 0 10px 6px -6px #777;
 }
 
 .list-group-item {
@@ -144,36 +149,42 @@ form input[type="text"] {
     height: 56px;
     padding: 0 1rem;
     font-size: 20px;
-    background-color: rgb(238, 224, 96);
+    background-color: khaki;
+    color: rgb(95, 95, 95);
 }
 
 .list-group-item button {
     position: absolute;
     height: 31px;
-    font-size: 16px;
-    line-height: 20px;
-    color: white;
+    line-height: 15px;
+    color: gray;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    background-color: transparent;
+}
+
+.list-group-item button:hover {
+    border: solid 1px black;
+    color: black;
 }
 
 .delete {
     width: 35px;
-    background-color: red;
     right: 1rem;
+    font-size: 15px;
 }
 
 .expand {
     width: 35px;
-    background-color: green;
     right: 4rem;
+    font-size: 15px;
 }
 
 .collapse {
     width: 35px;
-    background-color: green;
     right: 4rem;
+    font-size: 15px;
     display: none;
 }
 
@@ -191,7 +202,9 @@ form input[type="text"] {
     line-height: normal;
     border: solid 1px rgb(187, 187, 187);
     background-color: khaki;
+    color: rgb(95, 95, 95);
     display: none;
+
 }
 
 @media (max-width: 750px) {
@@ -210,3 +223,4 @@ form input[type="text"] {
         margin: 0 auto;
     }
 }
+

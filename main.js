@@ -59,7 +59,7 @@ function displayItems(){
     divGroupItem.className = "list-group-item"; 
     let deleteBtn = document.createElement('button');
     deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
-    deleteBtn.innerHTML = 'X';
+    deleteBtn.innerHTML = 'x';
     let expandBtn = document.createElement('button');
     expandBtn.classList = 'expand';
     expandBtn.innerHTML = '+';
@@ -105,7 +105,7 @@ function addItem(event){
     divGroupItem.className = "list-group-item"; 
     let deleteBtn = document.createElement('button');
     deleteBtn.classList = "btn btn-danger btn-sm float-right delete";
-    deleteBtn.innerHTML = 'X';
+    deleteBtn.innerHTML = 'x';
     let expandBtn = document.createElement('button');
     expandBtn.classList = 'expand';
     expandBtn.innerHTML = '+';
