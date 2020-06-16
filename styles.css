@@ -223,6 +223,7 @@ form input[type="text"]:hover {
         flex-direction: column;
         justify-content: center;
     }
+    
     .col-md-6 {
         width: 100%;
     }
