@@ -23,13 +23,24 @@
        <div id="main" class="card card-body">
         <h2 class="title">Add new note</h2>
         <form id="addForm" class="form-inline mb-3">
-          <input type="text" class="form-control mr-2" id="item" placeholder="Type note title..." autofocus="autofocus">
+          <input type="text" class="form-control mr-2" id="item" placeholder="Note title..." autofocus="autofocus">
           <input type="submit" class="btn btn-dark" value="Add +">
         </form>
-        <ul id="items" class="list-group"></ul>
+        <div id="items" class="list-group">
+         <!-- <div class="item-wrapper">
+            <div class="list-group-item">Grocery list
+              <button class="expand">Expand +</button>
+              <button class="collapse">Collapse -</button>
+              <button class="btn btn-danger btn-sm float-right delete">X</button>
+            </div>
+            <textarea class="note-field" placeholder="Type your note here..."></textarea>
+        </div> -->
+      </div>
        </div>
        
       </div>
-      <script src="index.js"></script>
+      <script src="main.js"></script>
 </body>
 </html>
+
+
